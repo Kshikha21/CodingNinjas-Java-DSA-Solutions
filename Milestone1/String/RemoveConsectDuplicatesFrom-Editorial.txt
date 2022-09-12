@@ -1,0 +1,19 @@
+public static String removeConsecutiveDuplicates(String str) {
+		//Your code goes here
+        String output="";
+        if(str.length()==0){
+            return str;
+        }
+        int i=0;
+        while(i<str.length()){
+            char uniqueChar=str.charAt(i);
+           int nextIndex=i+1;
+            while(nextIndex<str.length() && str.charAt(nextIndex)==uniqueChar){
+                nextIndex++;
+            }
+            output=output+uniqueChar;
+            i=nextIndex;
+            
+        }
+        return output;
+	}

@@ -1,0 +1,21 @@
+  public static void selectionSort(int[] arr) {
+        int i=0;
+        int round=0;
+        int min;
+
+        while(round<arr.length-1){
+            min=Integer.MAX_VALUE;
+            int minIndex=-1;
+            for(i=round;i<arr.length;i++){
+                if(arr[i]<min){
+                   min=arr[i];
+                    minIndex=i;
+                }
+            }
+            int temp=arr[minIndex];
+            arr[minIndex]=arr[round];
+            arr[round]=temp;  
+           round++; 
+            
+        }
+        

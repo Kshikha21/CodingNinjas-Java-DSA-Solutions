@@ -1,0 +1,27 @@
+public static String getCompressedString(String str) {
+		// Write your code here.
+       String output="";
+        int i=0;
+        while(i<str.length()){
+            int count=1;
+            output=output+str.charAt(i);
+            int j=i;
+            for(;j<str.length()-1;j++){
+                if(str.charAt(j)!=(str.charAt(j+1))){
+                    break;
+                }else{
+                    count++;
+                }
+            }
+            if(count>1){
+                output=output+count;
+            }
+
+            
+            
+            i=i+count;
+        }
+        
+        
+        return output;
+	}

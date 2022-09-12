@@ -1,0 +1,44 @@
+package fundamentals;
+import java.util.*;
+public class LargestColumn {
+
+public static int[][] takeInput(){
+    Scanner s=new Scanner(System.in);
+    System.out.println("Enter the number of rows");
+    int rows=s.nextInt();
+    System.out.println("Enter number of cols");
+    int cols=s.nextInt();
+    int[][] arr=new int[rows][cols];
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<cols;j++){
+            System.out.println("Enter the element at "+ i+ " row "+j+"column");
+            arr[i][j]=s.nextInt();
+        }
+    }
+    return arr;
+}
+
+public static void printLargestColumn(int arr[][]) {
+	int max=Integer.MIN_VALUE;
+	int row=arr.length;
+	int column=arr[0].length;
+	for(int i=0;i<column;i++) {
+		int sum=0;
+		for(int j=0;j<row;j++) {
+			sum=sum+arr[j][i];
+		}
+		if(sum>max) {
+			max=sum;
+		}
+	}
+	System.out.println(max);
+	
+}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 int [][]input=takeInput();
+		 printLargestColumn(input);
+	}
+
+}

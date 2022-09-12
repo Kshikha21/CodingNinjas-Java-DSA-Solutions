@@ -1,0 +1,43 @@
+import java.util.Stack;
+public class Solution {
+       private static Stack<Character> stack=new Stack<>();
+
+    public static boolean isBalanced(String str) {
+	   for(int i=0;i<str.length();i++){
+		   char current=str.charAt(i);
+		   if(isOpening(current)) {
+			   stack.push(current);
+		   }else {
+			   if(stack.isEmpty()) {
+				   return false;
+			   }
+			   else if(isMatching(stack.peek(),current)) {
+				     stack.pop();
+				   
+			   }else {
+				   return false;
+			   }
+		   }
+	   }
+	   if(stack.isEmpty()) {
+		   return true;
+	   }
+	   return false;
+	      
+	    }
+
+	private static boolean isMatching(Character peek, char current) {
+		
+		return (peek=='(' && current==')') ||
+				peek=='{' && current=='}'  ||
+				peek=='['  && current==']'
+				;
+	}
+
+	private static boolean isOpening(char current) {
+		return current=='(' ||
+				current== '{' ||
+				current== '[';
+	}
+	 }
+    

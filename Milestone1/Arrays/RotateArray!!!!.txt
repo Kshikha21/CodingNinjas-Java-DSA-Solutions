@@ -1,0 +1,24 @@
+
+public class Solution {  
+
+    public static void rotate(int[] arr, int d) {
+    	//Your code goes here
+     int temp[]=new int[d];
+        
+        for(int i=0;i<d;i++){   //shifting the firt d elements to new arr  1 2
+            temp[i]=arr[i]; 
+        }
+        for(int i=d;i<arr.length;i++){   //shifitng the elements forward  . . 3 4 5 6
+            arr[i-d]=arr[i];                                           // 3 4 5 6 . .
+        }
+        
+        for(int i=0;i<d;i++){       //adding the elements from temp to orinal array with n+i-d will give 
+            arr[arr.length+i-d]=temp[i];
+            
+            
+        }
+        
+       }
+      
+
+}

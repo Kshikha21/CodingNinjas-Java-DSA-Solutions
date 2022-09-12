@@ -1,0 +1,15 @@
+public class Main
+{
+    public static void pairFunction(int a[]){
+        for(int i=0;i<a.length-1;i++){   //iterate till a.length-1 since we dont use last element at i position.
+            for(int j=i+1;j<a.length ;j++){     //will be using j position with 5. 
+                System.out.println("("+a[i]+","+a[j]+")");
+            }
+        }
+    }
+    
+	public static void main(String[] args) {
+		int a[]={1,4,7,6,5};
+		pairFunction(a);
+	}
+}

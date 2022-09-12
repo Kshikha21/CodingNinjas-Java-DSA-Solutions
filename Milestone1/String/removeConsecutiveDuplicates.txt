@@ -1,0 +1,18 @@
+  public static String removeConsecutiveDuplicates(String str) {
+        //Your code goes here
+        String output="";
+        int i=0;
+        for(;i<str.length()-1;i++){
+            if(str.charAt(i)==str.charAt(i+1)){
+
+            }
+            else{
+                output=output+str.charAt(i);
+            }
+        }
+        while(i<str.length()){
+            output=output+str.charAt(i);
+            i++;
+        }
+        return output;
+    } 

@@ -1,0 +1,37 @@
+import java.util.*;
+public class Main {
+	
+	public static void main(String[] args) {
+		// Write your code here
+Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt();
+        int digits=0;
+       int divide=num;
+        int numbers;
+       int last;
+        int sum=0;
+        while(divide>0){
+            divide=divide/10;
+               digits++;
+        }
+        divide=num;
+        while(divide>0){
+            last=divide%10;
+            sum=sum+ (int)Math.pow(last,digits);
+             divide=divide/10;
+               
+        }
+        if(sum==num){
+            System.out.println("true");
+
+        }
+        else{
+            System.out.println("false");
+
+        }
+        
+        
+        
+        
+	}
+}

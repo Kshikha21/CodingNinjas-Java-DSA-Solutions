@@ -1,0 +1,10 @@
+
+	public stsatic String removeXWithBetter(String input) {
+		if(input.length()==0) {
+			return input;
+		}
+		if(input.charAt(0)=='x') {
+			return removeXWithBetter(input.substring(1));
+		}
+		return input.charAt(0)+removeXWithBetter(input.substring(1));
+	}

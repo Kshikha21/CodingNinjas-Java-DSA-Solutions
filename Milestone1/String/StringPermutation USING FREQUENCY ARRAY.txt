@@ -1,0 +1,49 @@
+  public static boolean isPermutation(String str1, String str2) {
+        if(str1.length()!=str2.length()){
+            return false;
+        }
+        //*WORKS FOR ELEMENTS EVENLY PRESENT abcc & abdd :-it shouldnt be true*//
+        
+       //  int output=0;
+       // for(int i=0;i<str1.length();i++){
+       //     output=output^str1.charAt(i)^str2.charAt(i);
+       // }
+       //   return output==0; //if same elements it should returns true 
+        
+        
+        //* WORKS WITH 2 ARRAYS TO MAINTAIN THE COUNT OF THE CHARACTERS IN THE ARRAY
+        
+//      int count1[]=new int[256];
+//         int count2[]=new int[256];
+        
+//         for(int i=0;i<str1.length();i++){
+//             ++count1[str1.charAt(i)];   //marking 1 at the value of the character
+//              ++count2[str2.charAt(i)];
+//         }
+//         for(int i=0;i<count1.length;i++){
+//             if(count1[i]!=count2[i]){
+//                 return false;
+//             }
+//         }
+//         return true;
+        
+        
+        //*WORKS FOR SINGLE FREUENCY ARRAY 
+        int freq[]=new int[256];
+        for(int i=0;i<str1.length();i++){
+            
+            ++freq[str1.charAt(i)];
+        }
+           for(int i=0;i<str2.length();i++){
+            --freq[str2.charAt(i)];
+        }
+        
+        for(int i=0;i<freq.length;i++){
+            if(freq[i]!=0){
+                return false;
+            }
+        }
+        return true;
+        
+        }
+    

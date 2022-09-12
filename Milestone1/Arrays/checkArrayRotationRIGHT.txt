@@ -1,0 +1,18 @@
+
+    public static int arrayRotateCheck(int[] arr){
+
+       int i=0;
+        int count=0;
+        int n=arr.length;
+        while(i<arr.length){
+            if(arr[i]> arr[n-1])
+            {
+                count++;
+                
+            }
+            i++;
+        }
+        return count;
+    
+    
+    }

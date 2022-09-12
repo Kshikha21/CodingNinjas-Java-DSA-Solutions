@@ -1,0 +1,35 @@
+ public static void sumOfTwoArrays(int arr1[], int arr2[], int output[]) {
+    	//Your code goes here
+      int n=arr1.length;
+        int m=arr2.length;
+        int i=n-1;
+        int j=m-1;
+        int k=output.length-1;
+       int carry=0;
+      while(i>=0 && j>=0){
+         
+          int num=arr1[i]+arr2[j]+carry;
+          int rem=num%10;
+          carry=num/10;
+          output[k]=rem;
+          k--;
+          j--;
+          i--;
+          if(carry==0){
+              output[0]=carry;
+          }
+          else{
+              output[0]=carry;
+          }  
+      }  
+        while(i>=0){
+            output[k]=arr1[i];
+            i--;
+            k--;
+        }
+        while(j>=0){
+            output[k]=arr2[j];
+            j--;
+            k--;
+        }
+    }

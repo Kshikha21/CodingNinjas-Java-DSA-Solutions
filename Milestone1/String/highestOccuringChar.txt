@@ -1,0 +1,30 @@
+public static char highestOccuringChar(String str) {
+		//Your code goes here
+        int[] freq=new int[256];
+        
+        for(int i=0;i<str.length();i++){
+            char a=str.charAt(i);
+            ++freq[a];
+        }
+        
+        int max=freq[0];
+        int index_i=0;
+        for(int i=0;i<256;i++){
+            if(freq[i]>max){
+               max=freq[i];
+                index_i=i;
+            }
+        }
+          char output=(char)index_i;
+        
+        for(int i=0;i<str.length();i++){
+            if(freq[str.charAt(i)]==max){
+                output=str.charAt(i);
+                break;
+            }
+        }
+        
+      
+        
+        return output;
+	}

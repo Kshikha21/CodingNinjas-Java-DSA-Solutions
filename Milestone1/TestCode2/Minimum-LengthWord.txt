@@ -1,0 +1,26 @@
+
+public class Solution {
+	
+	public static String minLengthWord(String input){
+	int s=0;int end=0;
+        int min_length=input.length();
+        int min_start_index=0;
+        String ans="";
+        while(end<=input.length()){
+            if(end<input.length() && input.charAt(end)!=' '){
+                end++;}
+        
+        else{
+            int currentLength=end-s;
+            if(currentLength<min_length){
+                min_length=currentLength;
+                min_start_index=s;
+            }
+            end++;
+            s=end;
+        }
+        }    
+            ans=input.substring(min_start_index,min_start_index+min_length);
+        return ans;
+	}
+}

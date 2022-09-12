@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+
+public Class StudentUse{
+    public static void main(String[] args){
+        //Scanner s = new Scanner(System.in);
+        System.out.println(Student.numStudents);
+        //System.out.println(Student.name);
+
+        Student s1 = new Student("Manisha",50);
+
+        Student s2= new Student("Ankush",125);
+        Student s3= new Student("Ankush",125);
+
+        System.out.println(s1.numStudents);
+        System.out.println(s2.numStudents);
+
+
+
+    }
+}
